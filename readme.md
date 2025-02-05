@@ -1,4 +1,3 @@
-![alt text](LeetCode.webp )
 **LeetCode 75** | timeframe: 1 week | language: typescript
 
 ***task***
