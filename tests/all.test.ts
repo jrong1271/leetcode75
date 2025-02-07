@@ -13,6 +13,7 @@ describe("canPlaceFlowers", () => {
     expect(canPlaceFlowers([1, 0, 0, 0, 1, 0, 0], 2)).toBeTruthy();
     expect(canPlaceFlowers([0], 1)).toBeTruthy();
     expect(canPlaceFlowers([0, 0, 0], 2)).toBeTruthy();
+    expect(canPlaceFlowers([0, 0, 0, 0, 1], 2)).toBeTruthy();
     expect(canPlaceFlowers([0, 0], 1)).toBeTruthy();
   });
 });
