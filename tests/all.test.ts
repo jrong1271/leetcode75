@@ -3,7 +3,32 @@ import { describe, it, expect } from "vitest";
 import { mergeAlternately } from "../src/1768.mergeAlternately";
 import { gcdOfStrings } from "../src/1071.gcdOfStrings";
 import { kidsWithCandies } from "../src/1431.kidsWithCandies";
-import { canPlaceFlowers } from "../src/605.canPlaceFlowers";
+import { canPlaceFlowers } from "../src/0605.canPlaceFlowers";
+import { reverseVowels } from "../src/0345.reverseVowes";
+import { reverseWords } from "../src/0151.reverseWords";
+import { productExceptSelf } from "../src/0238.productExceptSelf";
+
+describe("productExceptSelf", () => {
+  it("Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].", () => {
+    expect(productExceptSelf([1, 2, 3, 4])).toEqual([24, 12, 8, 6]);
+  });
+});
+
+describe("reverseWords", () => {
+  it("Given an input string s, reverse the order of the words.", () => {
+    expect(reverseWords("the sky is blue")).toEqual("blue is sky the");
+    expect(reverseWords("  hello world  ")).toEqual("world hello");
+    expect(reverseWords("a good   example")).toEqual("example good a");
+  });
+});
+
+describe("reverseVowels", () => {
+  it("Given a string s, reverse only all the vowels in the string and return it.", () => {
+    expect(reverseVowels("hello")).toEqual("holle");
+    expect(reverseVowels("leetcode")).toEqual("leotcede");
+    expect(reverseVowels("aA")).toEqual("Aa");
+  });
+});
 
 describe("canPlaceFlowers", () => {
   it("Given an integer array flowerbed containing 0's and 1's, where 0 means empty and 1 means not empty.", () => {
