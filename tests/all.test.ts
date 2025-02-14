@@ -12,31 +12,114 @@ import { increasingTriplet } from "../src/334.increasingTriplet";
 import { compress } from "../src/0443.compress";
 import { moveZeroes } from "../src/0283.moveZeroes";
 
+import { maxDepth } from "../src/0104.maxDepth";
+import { leafSimilar, TreeNode } from "../src/0872.leafSimilar";
+
+describe("leafSimilar", () => {
+  it("Consider all the leaves of a binary tree, from left to right order, the values of those leaves form a leaf value sequence.", () => {
+    // Example 1
+    const root1 = new TreeNode(
+      3,
+      new TreeNode(
+        5,
+        new TreeNode(6),
+        new TreeNode(2, new TreeNode(7), new TreeNode(4)),
+      ),
+      new TreeNode(1, new TreeNode(9), new TreeNode(8)),
+    );
+    const root2 = new TreeNode(
+      3,
+      new TreeNode(5, new TreeNode(6), new TreeNode(7)),
+      new TreeNode(
+        1,
+        new TreeNode(4),
+        new TreeNode(2, new TreeNode(9), new TreeNode(8)),
+      ),
+    );
+    expect(leafSimilar(root1, root2)).toBeTruthy();
+
+    // Example 2
+    const root3 = new TreeNode(1);
+    const root4 = new TreeNode(1);
+    expect(leafSimilar(root3, root4)).toBeTruthy();
+
+    // Example 3
+    const root5 = new TreeNode(1);
+    const root6 = new TreeNode(2);
+    expect(leafSimilar(root5, root6)).toBeFalsy();
+
+    // Example 4
+    const root7 = new TreeNode(1, new TreeNode(2), null);
+    const root8 = new TreeNode(2, new TreeNode(2), null);
+    expect(leafSimilar(root7, root8)).toBeTruthy();
+  });
+});
+
+describe("maxDepth", () => {
+  it("Given a binary tree, find its maximum depth.", () => {
+    // Example 1
+    const root1 = {
+      val: 3,
+      left: {
+        val: 9,
+        left: null,
+        right: null,
+      },
+      right: {
+        val: 20,
+        left: {
+          val: 15,
+          left: null,
+          right: null,
+        },
+        right: {
+          val: 7,
+          left: null,
+          right: null,
+        },
+      },
+    };
+    expect(maxDepth(root1)).toEqual(3);
+
+    // Example 2
+    const root2 = {
+      val: 1,
+      left: null,
+      right: null,
+    };
+    expect(maxDepth(root2)).toEqual(1);
+
+    // Example 3
+    const root3 = null;
+    expect(maxDepth(root3)).toEqual(0);
+  });
+});
+
 describe("moveZeroes", () => {
   it("Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.", () => {
-    // const nums = [0, 1, 0, 3, 12];
-    // moveZeroes(nums);
-    // expect(nums).toEqual([1, 3, 12, 0, 0]);
+    const nums = [0, 1, 0, 3, 12];
+    moveZeroes(nums);
+    expect(nums).toEqual([1, 3, 12, 0, 0]);
 
-    // const nums2 = [0]; // edge case
-    // moveZeroes(nums2);
-    // expect(nums2).toEqual([0]);
+    const nums2 = [0]; // edge case
+    moveZeroes(nums2);
+    expect(nums2).toEqual([0]);
 
-    // const nums3 = [1, 0]; // edge case 2
-    // moveZeroes(nums3);
-    // expect(nums3).toEqual([1, 0]);
+    const nums3 = [1, 0]; // edge case 2
+    moveZeroes(nums3);
+    expect(nums3).toEqual([1, 0]);
 
-    // const num4 = [2, 1]; // edge case 3
-    // moveZeroes(num4);
-    // expect(num4).toEqual([2, 1]);
+    const num4 = [2, 1]; // edge case 3
+    moveZeroes(num4);
+    expect(num4).toEqual([2, 1]);
 
-    // const num5 = [1, 0, 1]; // edge case 4
-    // moveZeroes(num5);
-    // expect(num5).toEqual([1, 1, 0]);
+    const num5 = [1, 0, 1]; // edge case 4
+    moveZeroes(num5);
+    expect(num5).toEqual([1, 1, 0]);
 
-    // const num6 = [1, 0, 0]; // edge case 5
-    // moveZeroes(num6);
-    // expect(num6).toEqual([1, 0, 0]);
+    const num6 = [1, 0, 0]; // edge case 5
+    moveZeroes(num6);
+    expect(num6).toEqual([1, 0, 0]);
 
     const num7 = [4, 2, 4, 0, 0, 3, 0, 5, 1, 0]; // edge case 6
     moveZeroes(num7);
