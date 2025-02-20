@@ -14,7 +14,14 @@ import { moveZeroes } from "../src/0283.moveZeroes";
 
 import { maxDepth } from "../src/0104.maxDepth";
 import { leafSimilar, TreeNode } from "../src/0872.leafSimilar";
+import { isSubsequence } from "../src/0392.isSubsequence";
 
+describe("isSubsequence", () => {
+  it("Given two strings s and t, return true if s is a subsequence of t, or false otherwise.", () => {
+    expect(isSubsequence("abc", "ahbgdc")).toBeTruthy();
+    expect(isSubsequence("axc", "ahbgdc")).toBeFalsy();
+  });
+});
 describe("leafSimilar", () => {
   it("Consider all the leaves of a binary tree, from left to right order, the values of those leaves form a leaf value sequence.", () => {
     // Example 1
