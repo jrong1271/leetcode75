@@ -1,6 +1,8 @@
 **LeetCode 75** | timeframe: 1 week | language: typescript
 https://leetcode.com/studyplan/leetcode-75/
 
+I constantly up my game by learning latest technologies, you may check my latest works from here https://github.com/jrong1271
+
 75 essential problem for Interview Prep. 
 
 ***task***
