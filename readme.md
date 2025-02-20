@@ -1,7 +1,7 @@
 **LeetCode 75** | timeframe: 1 week | language: typescript
 https://leetcode.com/studyplan/leetcode-75/
 
-Because shifting piority have become the norm, you may check my latest works from my profile page visit https://github.com/jrong1271
+I constantly up my game by learning latest technologies, you may check my latest works from here https://github.com/jrong1271
 
 75 essential problem for Interview Prep. 
 
