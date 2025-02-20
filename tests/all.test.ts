@@ -15,6 +15,16 @@ import { moveZeroes } from "../src/0283.moveZeroes";
 import { maxDepth } from "../src/0104.maxDepth";
 import { leafSimilar, TreeNode } from "../src/0872.leafSimilar";
 import { isSubsequence } from "../src/0392.isSubsequence";
+import maxArea from "../src/0011.maxArea";
+
+describe("maxArea", () => {
+  it("Given n non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.", () => {
+    expect(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])).toEqual(49);
+    expect(maxArea([1, 1])).toEqual(1);
+    expect(maxArea([4, 3, 2, 1, 4])).toEqual(16);
+    expect(maxArea([1, 2, 1])).toEqual(2);
+  });
+});
 
 describe("isSubsequence", () => {
   it("Given two strings s and t, return true if s is a subsequence of t, or false otherwise.", () => {
