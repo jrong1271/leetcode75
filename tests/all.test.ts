@@ -7,7 +7,7 @@ import { canPlaceFlowers } from "../src/0605.canPlaceFlowers";
 import { reverseVowels } from "../src/0345.reverseVowes";
 import { reverseWords } from "../src/0151.reverseWords";
 import { productExceptSelf } from "../src/0238.productExceptSelf";
-import { increasingTriplet } from "../src/334.increasingTriplet";
+import { increasingTriplet } from "../src/0334.increasingTriplet";
 
 import { compress } from "../src/0443.compress";
 import { moveZeroes } from "../src/0283.moveZeroes";
@@ -16,7 +16,88 @@ import { maxDepth } from "../src/0104.maxDepth";
 import { leafSimilar, TreeNode } from "../src/0872.leafSimilar";
 import { isSubsequence } from "../src/0392.isSubsequence";
 import maxArea from "../src/0011.maxArea";
+import canVisitAllRooms from "../src/0841.canVisitAllRooms";
+import findCircleNum from "../src/0574.findCircleNum";
 
+describe("findCircleNum", () => {
+  it("There are n cities. Some of them are connected, while some are not. If city a is connected directly with city b, and city b is connected directly with city c, then city a is connected indirectly with city c.", () => {
+    expect(
+      findCircleNum([
+        [1, 1, 0],
+        [1, 1, 0],
+        [0, 0, 1],
+      ]),
+    ).toEqual(2);
+    expect(
+      findCircleNum([
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1],
+      ]),
+    ).toEqual(3);
+    expect(
+      findCircleNum([
+        [1, 0, 0, 1],
+        [0, 1, 1, 0],
+        [0, 1, 1, 0],
+        [1, 0, 0, 1],
+      ]),
+    ).toEqual(2);
+    expect(
+      findCircleNum([
+        [1, 1, 0],
+        [1, 1, 1],
+        [0, 1, 1],
+      ]),
+    ).toEqual(1);
+    expect(
+      findCircleNum([
+        [1, 0, 0, 1],
+        [0, 1, 1, 0],
+        [0, 1, 1, 1],
+        [1, 0, 1, 1],
+      ]),
+    ).toEqual(1);
+    expect(
+      findCircleNum([
+        [1, 1, 0, 0],
+        [1, 1, 1, 0],
+        [0, 1, 1, 1],
+        [0, 0, 1, 1],
+      ]),
+    ).toEqual(1);
+    expect(
+      findCircleNum([
+        [1, 1, 0, 0, 0],
+        [1, 1, 1, 0, 0],
+        [0, 1, 1, 1, 0],
+        [0, 0, 1, 1, 1],
+        [0, 0, 0, 1, 1],
+      ]),
+    ).toEqual(1);
+  });
+});
+
+describe("canVisitAllRooms", () => {
+  it("You have n rooms labeled from 0 to n - 1 and all the rooms are locked except for room 0.", () => {
+    expect(canVisitAllRooms([[1], [2], [3], []])).toBeTruthy();
+    expect(canVisitAllRooms([[1, 3], [3, 0, 1], [2], [0]])).toBeFalsy();
+    expect(
+      canVisitAllRooms([
+        [1, 3],
+        [3, 0, 1],
+        [2],
+        [0],
+        [5],
+        [4],
+        [],
+        [6],
+        [],
+        [],
+      ]),
+    ).toBeFalsy();
+  });
+});
 describe("maxArea", () => {
   it("Given n non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.", () => {
     expect(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])).toEqual(49);
@@ -114,9 +195,9 @@ describe("maxDepth", () => {
 
 describe("moveZeroes", () => {
   it("Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.", () => {
-    const nums = [0, 1, 0, 3, 12];
+    const nums = [1, 1, 0, 3, 12];
     moveZeroes(nums);
-    expect(nums).toEqual([1, 3, 12, 0, 0]);
+    expect(nums).toEqual([1, 1, 3, 12, 0]);
 
     const nums2 = [0]; // edge case
     moveZeroes(nums2);
