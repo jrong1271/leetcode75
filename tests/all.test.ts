@@ -19,6 +19,42 @@ import maxArea from "../src/0011.maxArea";
 import canVisitAllRooms from "../src/0841.canVisitAllRooms";
 import findCircleNum from "../src/0574.findCircleNum";
 
+import maxOperations from "../src/1679.maxOperations";
+
+import { findMaxAverage } from "../src/0643.findMaxAverage";
+import { maxVowels } from "../src/1456.maxVowels";
+
+describe("maxVowels", () => {
+  it("Given a string s and an integer k, return the maximum number of vowel letters in any substring of s with length k.", () => {
+    expect(maxVowels("abciiidef", 3)).toEqual(3);
+    expect(maxVowels("aeiou", 2)).toEqual(2);
+    expect(maxVowels("leetcode", 3)).toEqual(2);
+    expect(maxVowels("rhythm", 3)).toEqual(0);
+  });
+});
+
+describe("findMaxAverage", () => {
+  it("Given an integer array nums consisting of n elements, and an integer k.", () => {
+    expect(findMaxAverage([1, 12, -5, -6, 50, 3], 4)).toEqual(12.75);
+    expect(findMaxAverage([5], 1)).toEqual(5.0);
+    expect(findMaxAverage([-1], 1)).toEqual(-1.0);
+  });
+});
+
+describe("maxOperations", () => {
+  it("Given a 0-indexed integer array nums, and an integer k.", () => {
+    expect(maxOperations([1, 2, 3, 4], 5)).toEqual(2);
+    expect(maxOperations([3, 1, 3, 4, 3], 6)).toEqual(1);
+    expect(
+      maxOperations(
+        [2, 5, 4, 4, 1, 3, 4, 4, 1, 4, 4, 1, 2, 3, 2, 2, 3, 2, 4, 2],
+        3,
+      ),
+    ).toEqual(3);
+    expect(maxOperations([1, 1, 1, 1, 1], 2)).toEqual(2);
+  });
+});
+
 describe("findCircleNum", () => {
   it("There are n cities. Some of them are connected, while some are not. If city a is connected directly with city b, and city b is connected directly with city c, then city a is connected indirectly with city c.", () => {
     expect(
