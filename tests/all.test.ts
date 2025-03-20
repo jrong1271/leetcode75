@@ -1,28 +1,125 @@
 import { describe, it, expect } from "vitest";
-
 import { mergeAlternately } from "../src/1768.mergeAlternately";
 import { gcdOfStrings } from "../src/1071.gcdOfStrings";
 import { kidsWithCandies } from "../src/1431.kidsWithCandies";
 import { canPlaceFlowers } from "../src/0605.canPlaceFlowers";
-import { reverseVowels } from "../src/0345.reverseVowes";
+import { reverseVowels } from "../src/0345.reverseVowels";
 import { reverseWords } from "../src/0151.reverseWords";
 import { productExceptSelf } from "../src/0238.productExceptSelf";
 import { increasingTriplet } from "../src/0334.increasingTriplet";
-
 import { compress } from "../src/0443.compress";
 import { moveZeroes } from "../src/0283.moveZeroes";
-
 import { maxDepth } from "../src/0104.maxDepth";
 import { leafSimilar, TreeNode } from "../src/0872.leafSimilar";
 import { isSubsequence } from "../src/0392.isSubsequence";
 import maxArea from "../src/0011.maxArea";
 import canVisitAllRooms from "../src/0841.canVisitAllRooms";
 import findCircleNum from "../src/0574.findCircleNum";
-
 import maxOperations from "../src/1679.maxOperations";
-
 import { findMaxAverage } from "../src/0643.findMaxAverage";
 import { maxVowels } from "../src/1456.maxVowels";
+import { longestOnes } from "../src/1004.longestOnes";
+import { longestSubarray } from "../src/1493.longestSubarray";
+import { largestAltitude } from "../src/1732.largestAltitude";
+import { pivotIndex } from "../src/0724.pivotIndex";
+import { uniqueOccurrences } from "../src/1207.uniqueOccurrences";
+import { closeStrings } from "../src/1657.closeStrings";
+import { equalPairs } from "../src/2352.equalPairs";
+import { removeStars } from "../src/2390.removeStars";
+import { asteroidCollision } from "../src/0735.asteroidCollision";
+
+describe("asteroidCollision", () => {
+  it("Given an array asteroids of integers representing asteroids in a row, return the number of asteroids that will be left.", () => {
+    expect(asteroidCollision([5, 10, -5])).toEqual([5, 10]);
+    expect(asteroidCollision([8, -8])).toEqual([]);
+    expect(asteroidCollision([10, 2, -5])).toEqual([10]);
+    expect(asteroidCollision([-2, -1, 1, 2])).toEqual([-2, -1, 1, 2]);
+  });
+});
+describe("removeStars", () => {
+  it("Given a string s, remove the closest non-star character to its left, as well as remove the star itself.", () => {
+    expect(removeStars("leet*code")).toBe("leecode");
+    expect(removeStars("a*b*c*d")).toBe("d");
+    expect(removeStars("ad*bc*cd")).toBe("abcd");
+    expect(removeStars("*a*b*c*d")).toBe("d");
+    expect(removeStars("***")).toBe("");
+  });
+});
+
+describe("equalPairs", () => {
+  it("Given a 2D array grid of integers, return the number of equal pairs that can be formed.", () => {
+    expect(
+      equalPairs([
+        [3, 2, 1],
+        [1, 7, 6],
+        [2, 7, 7],
+      ]),
+    ).toEqual(1);
+    expect(
+      equalPairs([
+        [1, 2],
+        [3, 4],
+      ]),
+    ).toEqual(0);
+    expect(
+      equalPairs([
+        [1, 3],
+        [2, 3],
+      ]),
+    ).toEqual(0);
+  });
+});
+
+describe("closeStrings", () => {
+  it("Given two strings word1 and word2, return true if word1 and word2 are close, otherwise return false.", () => {
+    expect(closeStrings("abc", "bca")).toBeTruthy();
+    expect(closeStrings("a", "aa")).toBeFalsy();
+    expect(closeStrings("cabbba", "abbccc")).toBeTruthy();
+  });
+});
+
+describe("uniqueOccurrences", () => {
+  it("Given an array of integers arr, return true if and only if the number of unique elements is equal to the number of occurrences of each element.", () => {
+    expect(uniqueOccurrences([1, 2, 2, 1, 3, 2])).toBeTruthy();
+    expect(uniqueOccurrences([1, 2])).toBeFalsy();
+    expect(uniqueOccurrences([1, 1, 2, 2, 3, 3])).toBeFalsy();
+    expect(uniqueOccurrences([1])).toBeTruthy();
+  });
+});
+
+describe("largestAltitude", () => {
+  it("Given a gain array, return the highest altitude.", () => {
+    expect(largestAltitude([-5, 1, 5, 0, -7])).toEqual(1);
+    expect(largestAltitude([-4, -3, -2, -1, 4, 3, 2])).toEqual(0);
+  });
+});
+
+describe("pivotIndex", () => {
+  it("Given an array of integers nums, calculate the pivot index of this array.", () => {
+    expect(pivotIndex([1, 7, 3, 6, 5, 6])).toEqual(3);
+    expect(pivotIndex([1, 2, 3])).toEqual(-1);
+    expect(pivotIndex([2, 1, -1])).toEqual(0);
+  });
+});
+
+describe("longestSubarray", () => {
+  it("Given a binary array nums, return the maximum number of consecutive 1's in the array if you can flip at most one 0.", () => {
+    expect(longestSubarray([1, 1, 0, 1])).toEqual(3);
+    expect(longestSubarray([0, 1, 1, 1, 0, 1, 1, 0, 1])).toEqual(5);
+    expect(longestSubarray([1, 1, 1])).toEqual(2);
+    expect(longestSubarray([0, 0, 0])).toEqual(0);
+    expect(longestSubarray([1, 1, 0, 0, 1, 1, 1, 0, 1])).toEqual(4);
+  });
+});
+
+describe("longestOnes", () => {
+  it("Given a binary array nums and an integer k, return the maximum number of consecutive 1's in the array if you can flip at most k 0's.", () => {
+    expect(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2)).toEqual(6);
+    expect(
+      longestOnes([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3),
+    ).toEqual(10);
+  });
+});
 
 describe("maxVowels", () => {
   it("Given a string s and an integer k, return the maximum number of vowel letters in any substring of s with length k.", () => {
