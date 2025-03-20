@@ -27,6 +27,19 @@ import { closeStrings } from "../src/1657.closeStrings";
 import { equalPairs } from "../src/2352.equalPairs";
 import { removeStars } from "../src/2390.removeStars";
 import { asteroidCollision } from "../src/0735.asteroidCollision";
+import { findDifference } from "../src/2215.findDifference";
+
+describe("findDifference", () => {
+  it("Given two 0-indexed integer arrays nums1 and nums2, return a list answer of size 2 where: ", () => {
+    expect(findDifference([1, 2, 3], [1, 2, 4])).toEqual([[3], [4]]);
+    expect(findDifference([1, 2, 3], [4, 5, 6])).toEqual([
+      [1, 2, 3],
+      [4, 5, 6],
+    ]);
+    expect(findDifference([1, 2, 3], [1, 2, 3])).toEqual([[], []]);
+  });
+});
+import { TreeNode } from "../src/types/TreeNode";
 
 describe("asteroidCollision", () => {
   it("Given an array asteroids of integers representing asteroids in a row, return the number of asteroids that will be left.", () => {
@@ -75,6 +88,9 @@ describe("closeStrings", () => {
     expect(closeStrings("abc", "bca")).toBeTruthy();
     expect(closeStrings("a", "aa")).toBeFalsy();
     expect(closeStrings("cabbba", "abbccc")).toBeTruthy();
+    expect(closeStrings("abbcc", "aaabc")).toBeFalsy();
+    expect(closeStrings("cabbba", "aabbss")).toBeFalsy();
+    expect(closeStrings("uau", "ssx")).toBeFalsy();
   });
 });
 
