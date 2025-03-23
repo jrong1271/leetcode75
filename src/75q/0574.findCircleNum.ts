@@ -15,7 +15,7 @@
 //
 // Follow up: Could you solve this problem by applying the union-find algorithm?
 //
-export default function findCircleNum(isConnected: number[][]): number {
+export function findCircleNum(isConnected: number[][]): number {
   const visited = new Set<number>();
   let count = 0;
   for (let i = 0; i < isConnected.length; i++) {

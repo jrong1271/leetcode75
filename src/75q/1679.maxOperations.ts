@@ -5,7 +5,7 @@ In one operation, you can pick two numbers from the array whose sum is equal to 
 
 Return the maximum number of operations you can perform on the array.
 */
-export default function maxOperations(nums: number[], k: number): number {
+export function maxOperations(nums: number[], k: number): number {
   const map = new Map<number, number>();
   let ans = 0;
   for (const x of nums) {

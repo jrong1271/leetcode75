@@ -29,7 +29,7 @@
  * @param {TreeNode} root2
  * @return {boolean}
  */
-import { TreeNode } from "./types/TreeNode";
+import { TreeNode } from "../types/TreeNode";
 
 export function leafSimilar(root1: TreeNode, root2: TreeNode): boolean {
   const findLeafs = (root: TreeNode, list: number[]) => {

@@ -11,7 +11,7 @@
  * @param {number[][]} rooms
  * @return {boolean}
  */
-export default function canVisitAllRooms(rooms: number[][]): boolean {
+export function canVisitAllRooms(rooms: number[][]): boolean {
   const visited = new Set<number>();
   function dfs(i: number) {
     if (visited.has(i)) return;

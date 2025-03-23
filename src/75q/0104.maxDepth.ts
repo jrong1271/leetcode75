@@ -14,7 +14,7 @@
 // Space complexity: O(n)
 // Tags: Tree, Depth-first Search
 
-import { TreeNode } from "./types/TreeNode";
+import { TreeNode } from "../types/TreeNode";
 export function maxDepth(root: TreeNode | null): number {
   if (root === null) {
     return 0;

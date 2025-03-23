@@ -29,7 +29,7 @@
  * @return {number}
  */
 
-export default function maxArea(height: number[]): number {
+export function maxArea(height: number[]): number {
   let [l, r] = [0, height.length - 1];
   let ans = 0;
   while (l < r) {
