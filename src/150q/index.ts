@@ -4,6 +4,8 @@
 
 export * from "./array/0026.removeDuplicates";
 export * from "./array/0027.removeElement";
+export * from "./array/0045.jump";
+export * from "./array/0050.canJump";
 export * from "./array/0080.removeDuplicatesII";
 export * from "./array/0088.mergeSortArray";
 export * from "./array/0121.maxProfit";

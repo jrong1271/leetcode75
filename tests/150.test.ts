@@ -10,6 +10,8 @@ import {
   rotate,
   maxProfit,
   maxProfitII,
+  canJump,
+  jump,
 } from "../src/150q";
 
 describe("removeDuplicates", () => {
@@ -135,5 +137,21 @@ describe("maxProfitII", () => {
 
   it("max profit of [7,6,4,3,1] should return 0", () => {
     expect(maxProfitII([7, 6, 4, 3, 1])).toBe(0);
+  });
+});
+
+describe("canJump", () => {
+  it("can jump [2,3,1,1,4] should return true", () => {
+    expect(canJump([2, 3, 1, 1, 4])).toBe(true);
+  });
+
+  it("can jump [3,2,1,0,4] should return false", () => {
+    expect(canJump([3, 2, 1, 0, 4])).toBe(false);
+  });
+});
+
+describe("jump", () => {
+  it("jump [2,3,1,1,4] should return 2", () => {
+    expect(jump([2, 3, 1, 1, 4])).toBe(2);
   });
 });
