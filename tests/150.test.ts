@@ -5,6 +5,11 @@ import {
   merge,
   lengthOfLongestSubstring,
   removeDuplicates,
+  removeDuplicatesII,
+  majorityElement,
+  rotate,
+  maxProfit,
+  maxProfitII,
 } from "../src/150q";
 
 describe("removeDuplicates", () => {
@@ -79,5 +84,56 @@ describe("length of logest substring", () => {
 
   it("'' should return 0", () => {
     expect(lengthOfLongestSubstring("")).toBe(0);
+  });
+});
+describe("removeDuplicatesII", () => {
+  it("remove duplicates from [1,1,1,2,2,3] should return 5", () => {
+    const nums = [1, 1, 1, 2, 2, 3];
+    expect(removeDuplicatesII(nums)).toBe(5);
+    expect(nums).toEqual([1, 1, 2, 2, 3, 3]);
+  });
+});
+
+describe("majorityElement", () => {
+  it("majority element of [3,2,3] should return 3", () => {
+    expect(majorityElement([3, 2, 3])).toBe(3);
+  });
+});
+
+describe("rotate", () => {
+  it("rotate [1,2,3,4,5,6,7] by 3 should return [5,6,7,1,2,3,4]", () => {
+    const nums = [1, 2, 3, 4, 5, 6, 7];
+    rotate(nums, 3);
+    expect(nums).toEqual([5, 6, 7, 1, 2, 3, 4]);
+  });
+
+  it("rotate [-1,-100,3,99] by 2 should return [3,99,-1,-100]", () => {
+    const nums = [-1, -100, 3, 99];
+    rotate(nums, 2);
+    expect(nums).toEqual([3, 99, -1, -100]);
+  });
+});
+
+describe("maxProfit", () => {
+  it("max profit of [7,1,5,3,6,4] should return 5", () => {
+    expect(maxProfit([7, 1, 5, 3, 6, 4])).toBe(5);
+  });
+
+  it("max profit of [7,6,4,3,1] should return 0", () => {
+    expect(maxProfit([7, 6, 4, 3, 1])).toBe(0);
+  });
+});
+
+describe("maxProfitII", () => {
+  it("max profit of [7,1,5,3,6,4] should return 7", () => {
+    expect(maxProfitII([7, 1, 5, 3, 6, 4])).toBe(7);
+  });
+
+  it("max profit of [1,2,3,4,5] should return 4", () => {
+    expect(maxProfitII([1, 2, 3, 4, 5])).toBe(4);
+  });
+
+  it("max profit of [7,6,4,3,1] should return 0", () => {
+    expect(maxProfitII([7, 6, 4, 3, 1])).toBe(0);
   });
 });

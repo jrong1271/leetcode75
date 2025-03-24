@@ -1,12 +1,14 @@
 {
   "name": "leetcode75",
   "version": "1.0.0",
-  "description": "resolve easy to intermediate leetcode challenge",
+  "description": "answer some of the easy to intermediate leetcode questions",
   "main": "index.js",
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "run": "barrelsby --directory src/150q"
+    "index": "barrelsby --directory src/150q --delete true",
+    "index75": "barrelsby --directory src/75q --delete true",
+    "watch": "nodemon --watch src/150q/** --ignore src/150q -e ts --exec 'npm run index'"
   },
   "repository": {
     "type": "git",
