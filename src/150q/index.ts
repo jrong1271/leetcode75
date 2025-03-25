@@ -4,6 +4,7 @@
 
 export * from "./array/0026.removeDuplicates";
 export * from "./array/0027.removeElement";
+export * from "./array/0042.trap";
 export * from "./array/0045.jump";
 export * from "./array/0050.canJump";
 export * from "./array/0080.removeDuplicatesII";

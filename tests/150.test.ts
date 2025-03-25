@@ -12,6 +12,7 @@ import {
   maxProfitII,
   canJump,
   jump,
+  trap,
 } from "../src/150q";
 
 describe("removeDuplicates", () => {
@@ -153,5 +154,11 @@ describe("canJump", () => {
 describe("jump", () => {
   it("jump [2,3,1,1,4] should return 2", () => {
     expect(jump([2, 3, 1, 1, 4])).toBe(2);
+  });
+});
+
+describe("trap", () => {
+  it("trap [0,1,0,2,1,0,1,3,2,1,2,1] should return 6", () => {
+    expect(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])).toBe(6);
   });
 });

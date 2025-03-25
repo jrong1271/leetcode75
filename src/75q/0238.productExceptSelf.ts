@@ -17,15 +17,19 @@
 export function productExceptSelf(nums: number[]): number[] {
   const n = nums.length;
   const ans: number[] = new Array(n);
-  for (let i = 0, productOfLeftNums = 1; i < n; i++) {
+  let [productOfLeftNums, productOfRightNums] = [1, 1];
+  for (let i = 0; i < n; i++) {
     ans[i] = productOfLeftNums;
     productOfLeftNums *= nums[i];
   }
+  // [1, 2, 3, 4] - > [1, 1, 2, 6]
 
-  for (let j = n - 1, productOfRightNums = 1; j >= 0; j--) {
+  for (let j = n - 1; j >= 0; j--) {
     ans[j] *= productOfRightNums;
     productOfRightNums *= nums[j];
   }
+  // r begins as 24 * 1 <- 12 * 2 <- 4 * 3 <- 1 * 4
 
+  //should be [24, 12, 8, 6]
   return ans;
 }

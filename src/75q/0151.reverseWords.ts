@@ -34,19 +34,20 @@
  */
 
 export function reverseWords(s: string): string {
-  let i = 0;
-  const result: string[] = [];
-  while (i < s.length) {
-    if (s[i] === " ") {
+  const ans: string[] = [];
+  const n = s.length;
+  for (let i = 0, j = 0; i < n; ++i) {
+    while (s[i] == " " && i < n) {
       i++;
-      continue;
     }
-    let j = i;
-    while (j < s.length && s[j] !== " ") {
+    if (i == n) break;
+    j = i;
+    while (s[j] !== " " && j < n) {
       j++;
     }
-    result.push(s.slice(i, j));
+    const w = s.slice(i, j);
+    ans.unshift(w);
     i = j;
   }
-  return result.reverse().join(" ");
+  return ans.join(" ");
 }
