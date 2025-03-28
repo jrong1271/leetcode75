@@ -279,6 +279,11 @@ describe("leafSimilar", () => {
     const root7 = new TreeNode(1, new TreeNode(2), null);
     const root8 = new TreeNode(2, new TreeNode(2), null);
     expect(Answer75.leafSimilar(root7, root8)).toBeTruthy();
+
+    // Example 5
+    const root9 = new TreeNode(1, new TreeNode(2), new TreeNode());
+    const root10 = new TreeNode(1, new TreeNode(), new TreeNode(2));
+    expect(Answer75.leafSimilar(root9, root10)).toBeFalsy();
   });
 });
 

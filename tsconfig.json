@@ -3,6 +3,7 @@
     "moduleResolution": "node",
     "types": ["vitest/globals"],
     "target": "ES2022",
+    "module": "esnext",
     "lib": ["ES2022", "DOM"]
   }
 }

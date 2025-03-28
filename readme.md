@@ -10,4 +10,4 @@ I constantly up my game by learning latest technologies, you may check my latest
 - [x] use this repository to monitor my progress as I go through each leetcode problem
 - [x] use vitest to test my solutions for leetcode problems
   * run ```npm run test:coverage```
-  ![](tests/coverage.png)
+  ![](coverage-report.png)

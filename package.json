@@ -1,5 +1,6 @@
 {
   "name": "leetcode75",
+  "type": "module",
   "version": "1.0.0",
   "description": "answer some of the easy to intermediate leetcode questions",
   "main": "index.js",
@@ -35,5 +36,9 @@
     "nodemon": "^3.1.9",
     "prettier": "^3.4.2",
     "vitest": "^3.0.5"
+  },
+  "dependencies": {
+    "puppeteer": "^24.4.0",
+    "vite": "^6.2.3"
   }
 }
