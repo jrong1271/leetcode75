@@ -9,7 +9,7 @@ export * from "./0238.productExceptSelf";
 export * from "./0283.moveZeroes";
 export * from "./0334.increasingTriplet";
 export * from "./0345.reverseVowels";
-export * from "./0392.isSubsequence";
+export * from "./two-pointers/0392.isSubsequence";
 export * from "./0443.compress";
 export * from "./0574.findCircleNum";
 export * from "./0605.canPlaceFlowers";
