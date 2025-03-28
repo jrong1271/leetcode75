@@ -1,6 +1,3 @@
-/*
- * @lc app=leetcode.cn id=167 lang=typescript
- */
 export function twoSum(numbers: number[], target: number): number[] {
   let left = 0;
   let right = numbers.length - 1;
