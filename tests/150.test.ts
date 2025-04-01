@@ -1,5 +1,31 @@
 import { describe, it, expect } from "vitest";
 
+import { removeNthFromEnd } from "../src/150q";
+import { ListNode, createList } from "../src/types/ListNode";
+
+describe("removeNthFromEnd", () => {
+  const testCases = [
+    {
+      input: { head: createList([1, 2, 3, 4, 5]), n: 2 },
+      expected: createList([1, 2, 3, 5]),
+    },
+    {
+      input: { head: createList([1, 2]), n: 1 },
+      expected: createList([1]),
+    },
+    {
+      input: { head: createList([1, 2]), n: 2 },
+      expected: createList([2]),
+    },
+  ];
+  for (const { input, expected } of testCases) {
+    it(`remove ${input.n}th from end of list`, () => {
+      const result = removeNthFromEnd(input.head, input.n);
+      expect(result).toEqual(expected);
+    });
+  }
+});
+
 import { summaryRanges } from "../src/150q";
 describe("summaryRanges", () => {
   it("summary ranges of [0,2,3,4,6,8,9] should return ['0','2->4','6','8->9']", () => {
@@ -152,9 +178,6 @@ describe("trap", () => {
 // two pointers
 import { isPalindrome, twoSum, threeSum } from "../src/150q";
 
-// sliding window
-import { lengthOfLongestSubstring } from "../src/150q";
-
 describe("threeSum", () => {
   it("three sum of [-1,0,1,2,-1,-4] should return [[-1,-1,2],[-1,0,1]]", () => {
     expect(threeSum([-1, 0, 1, 2, -1, -4])).toEqual([
@@ -189,6 +212,8 @@ describe("isPalindrome", () => {
     expect(isPalindrome("!abccba!")).toBe(true);
   });
 });
+// sliding window
+import { lengthOfLongestSubstring } from "../src/150q";
 
 describe("length of longest substring", () => {
   it("axxxabc should return 4", () => {
