@@ -1,8 +1,55 @@
 import { describe, it, expect } from "vitest";
 
-import { removeNthFromEnd } from "../src/150q";
-import { ListNode, createList } from "../src/types/ListNode";
+import { groupAnagrams, isHappy } from "../src/150q";
 
+describe("isHappy", () => {
+  it("isHappy(19) should return true", () => {
+    expect(isHappy(19)).toBe(true);
+  });
+  it("isHappy(2) should return false", () => {
+    expect(isHappy(2)).toBe(false);
+  });
+});
+
+describe("groupAnagrams", () => {
+  it("groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']) should return [['bat'], ['nat', 'tan'], ['ate', 'eat', 'tea']]", () => {
+    expect(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"])).toEqual([
+      ["bat"],
+      ["nat", "tan"],
+      ["ate", "tea", "eat"],
+    ]);
+  });
+});
+
+import { removeNthFromEnd, reverseBetween } from "../src/150q";
+import { createList } from "../src/types/ListNode";
+
+describe("reverseBetween", () => {
+  const testCases = [
+    {
+      input: { head: createList([1, 2, 3, 4, 5]), left: 2, right: 4 },
+      expected: createList([1, 4, 3, 2, 5]),
+    },
+    {
+      input: { head: createList([1]), left: 1, right: 1 },
+      expected: createList([1]),
+    },
+    {
+      input: { head: createList([1]), left: 1, right: 2 },
+      expected: createList([1]),
+    },
+    {
+      input: { head: createList([1]), left: 0, right: 0 },
+      expected: createList([1]),
+    },
+  ];
+  for (const { input, expected } of testCases) {
+    it(`reverse between ${input.left} and ${input.right}`, () => {
+      const result = reverseBetween(input.head, input.left, input.right);
+      expect(result).toEqual(expected);
+    });
+  }
+});
 describe("removeNthFromEnd", () => {
   const testCases = [
     {
