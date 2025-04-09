@@ -9,6 +9,5 @@ export function groupAnagrams(strs: string[]): string[][] {
     }
     map.get(id).push(strs[n]);
   }
-  console.log(map.values());
   return Array.from(map.values());
 }

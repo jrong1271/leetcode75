@@ -1,5 +1,22 @@
 import { describe, it, expect } from "vitest";
 
+import { rotateMatrix } from "../src/150q/matrix/0048.rotate";
+describe("rotate", () => {
+  it("rotateMatrix [[1,2,3],[4,5,6],[7,8,9]] should return [[7,4,1],[8,5,2],[9,6,3]]", () => {
+    const matrix = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9],
+    ];
+    rotateMatrix(matrix);
+    expect(matrix).toEqual([
+      [7, 4, 1],
+      [8, 5, 2],
+      [9, 6, 3],
+    ]);
+  });
+});
+
 import { groupAnagrams, isHappy } from "../src/150q";
 
 describe("isHappy", () => {
@@ -87,6 +104,7 @@ describe("summaryRanges", () => {
 
 import {
   canJump,
+  candy,
   removeElement,
   removeDuplicates,
   removeDuplicatesII,
@@ -99,6 +117,22 @@ import {
   rotate,
   trap,
 } from "../src/150q";
+
+describe("candy", () => {
+  it("candy of [1,0,2] should return 5", () => {
+    expect(candy([1, 0, 2])).toBe(5);
+  });
+  it("candy of [1,2,2] should return 4", () => {
+    expect(candy([1, 2, 2])).toBe(4);
+  });
+  it("candy of [1,3,2,2,1] should return 7", () => {
+    expect(candy([1, 3, 2, 2, 1])).toBe(7);
+  });
+  it("candy of [1,2,3,4,5] should return 15", () => {
+    expect(candy([1, 2, 3, 4, 5])).toBe(15);
+  });
+});
+
 describe("lengthOfLastWord", () => {
   it("length of last word of 'Hello World' should return 5", () => {
     expect(lengthOfLastWord("Hello World")).toBe(5);
