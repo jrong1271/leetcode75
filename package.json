@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest",
-    "test:coverage": "vitest --coverage",
+    "test:coverage": "vitest --coverage & sleep 2 & node captureCoverageImage.js",
     "index": "barrelsby --directory src/150q --delete true",
     "index75": "barrelsby --directory src/75q --delete true",
     "watch": "nodemon --watch src/150q/** --ignore src/150q -e ts --exec 'npm run index'"
@@ -35,7 +35,7 @@
     "eslint-plugin-prettier": "^5.2.3",
     "nodemon": "^3.1.9",
     "prettier": "^3.4.2",
-    "vitest": "^3.0.5"
+    "vitest": "^3.1.1"
   },
   "dependencies": {
     "puppeteer": "^24.4.0",

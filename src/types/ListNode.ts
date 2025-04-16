@@ -23,12 +23,3 @@ export const createList = (arr: number[]): ListNode | null => {
   }
   return head;
 };
-export const printList = (head: ListNode | null): void => {
-  let current = head;
-  const values: number[] = [];
-  while (current) {
-    values.push(current.val);
-    current = current.next;
-  }
-  console.log(values.join(" -> "));
-};
